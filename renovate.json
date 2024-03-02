@@ -2,8 +2,12 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   ],
   "configMigration": true,
-  "extends": [
-    "config:recommended",
-    ":approveMajorUpdates"
+  "extends": ["config:best-practices"],
+  "packageRules": [
+    {
+      "description": "Force lots of pending updates for the Prettier package",
+      "matchPackageNames": ["spring-boot-starter-parent"],
+      "minimumReleaseAge": "365 days"
+    }
   ]
 }
